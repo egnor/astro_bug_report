@@ -1,0 +1,9 @@
+{
+  "name": "astro_test",
+  "version": "0.0",
+  "type": "module",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.0.1"
+  }
+}

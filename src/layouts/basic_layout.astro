@@ -1,0 +1,52 @@
+---
+import { Debug } from 'astro:components';
+import * as index_import from '../pages/index.md';
+import * as another_page_import from '../pages/another_page.md';
+import * as subdir_index_import from '../pages/subdir/index.md';
+import * as subdir_another_page_import from '../pages/subdir/another_page.md';
+---
+<html>
+  <head>
+    <title>Basic layout: {Astro.props.title}</title>
+  </head>
+  <body>
+    <slot />
+
+    <table border=1>
+      <tr> <th>Page</th> <th>url</th> <th>file</th> </tr>
+      <tr>
+        <td>Astro.url and Astro.routePattern</td> 
+        <td>{Astro.url}</td>
+        <td>{Astro.routePattern}</td>
+      </tr>
+      <tr>
+        <td>Astro.props for this page</td> 
+        <td>{Astro.props.url}</td>
+        <td>{Astro.props.file}</td>
+      </tr>
+      <tr>
+        <td>import of index.md</td> 
+        <td>{index_import.url}</td>
+        <td>{index_import.file}</td>
+      </tr>
+      <tr>
+        <td>import of another_page.md</td> 
+        <td>{another_page_import.url}</td>
+        <td>{another_page_import.file}</td>
+      </tr>
+      <tr>
+        <td>import of subdir/index.md</td> 
+        <td>{subdir_index_import.url}</td>
+        <td>{subdir_index_import.file}</td>
+      </tr>
+      <tr>
+        <td>import of subdir/another_page.md</td> 
+        <td>{subdir_another_page_import.url}</td>
+        <td>{subdir_another_page_import.file}</td>
+      </tr>
+    </table>
+
+    <br />
+    <!-- <Debug import.meta.env={import.meta.env} /> -->
+  </body>
+</html>
